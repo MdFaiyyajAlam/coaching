@@ -22,7 +22,7 @@ Route::post('/apply',[StudentController::class,'applyStore'])->name('applyStore'
 Route::get('/profile',[StudentController::class,'profile'])->name('profile');
 
 Route::prefix("admin")->group(function(){
-    Route::get('/dashboard',[AdminController::class,"dashboard"])->name('dashboard');
+    Route::get('/dashboard',[AdminController::class,"dashboard"])->name('admin.dashboard');
     Route::get('/students',[AdminController::class,"students"])->name('students');
 });
 
