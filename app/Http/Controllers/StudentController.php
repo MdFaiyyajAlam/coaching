@@ -10,7 +10,7 @@ use Auth;
 class StudentController extends Controller
 {
 
- 
+
     public function __construct(){
         $this->middleware('auth');
     }
@@ -56,8 +56,8 @@ class StudentController extends Controller
             'skills' => 'required',
             'school' => 'required',
             'dp' => 'required|mimes:jpg,png',
-     
-            
+
+
         ]);
 
         $filename = time()."." .$request->dp->extension();
@@ -75,7 +75,7 @@ class StudentController extends Controller
             'skills' => $request->skills,
             'school' => $request->school,
             'dp' => $filename,
-            'user_id' => Auth::id(),
+            'user_id' => Auth::id()
         ]);
 
         return redirect()->back();
